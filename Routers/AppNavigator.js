@@ -1,5 +1,4 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-
 import Page from "./Page"
 import BloodBank from "./BloodBank"
 // import HelpDesk from "./HelpDesk"
@@ -40,7 +39,14 @@ const MainNavigator = createStackNavigator({
   ViewProfile: {
     screen: ViewProfile
   },
-});
+},
+{
+  headerMode: 'none',
+  navigationOptions: {
+      headerVisible: false,
+  }
+}
+);
 
 const App = createAppContainer(MainNavigator);
 
