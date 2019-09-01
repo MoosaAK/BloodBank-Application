@@ -30,6 +30,7 @@ export default class DonorForm extends React.Component {
                 TextInput_DonorAge: this.state.TextInput_DonorAge,
                 TextInput_DonorCity: this.state.TextInput_DonorCity,
                 PickerSelectedVal: this.state.PickerSelectedVal,
+                
 
             }).then(() => {
                 console.log('INSERTED')
@@ -53,6 +54,7 @@ export default class DonorForm extends React.Component {
             TextInput_DonorAge: '',
             TextInput_DonorCity: '',
             PickerSelectedVal: '',
+            // image:''
         }
 
 
@@ -63,7 +65,9 @@ export default class DonorForm extends React.Component {
         console.log(this.state.TextInput_DonorNumber)
         console.log(this.state.TextInput_DonorAge)
         console.log(this.state.TextInput_DonorCity)
-        console.log(this.state.PickerSelectedVal);
+        console.log(this.state.PickerSelectedVal)
+        // console.log(this.state.image);
+
     }
 
     Send_Data_Function = () => {
@@ -73,7 +77,9 @@ export default class DonorForm extends React.Component {
             DonorNumberOBJ: this.state.TextInput_DonorNumber,
             DonorAgeOBJ: this.state.TextInput_DonorAge,
             DonorCityOBJ: this.state.TextInput_DonorCity,
-            DonorBGroupOBJ: this.state.BloodGroup
+            DonorBGroupOBJ: this.state.BloodGroup,
+            // image: this.state.image
+
         });
 
 
@@ -175,7 +181,7 @@ export default class DonorForm extends React.Component {
                         <TouchableOpacity
                             style={{ marginTop: 10, marginLeft: 20 }}
                             onPress={() =>
-                                this.props.navigation.navigate('***')
+                                this.props.navigation.navigate('Page2')
                             }
                         >
                             <Image

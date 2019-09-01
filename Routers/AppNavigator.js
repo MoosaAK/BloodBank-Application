@@ -6,7 +6,7 @@ import ViewProfile from './ViewProfile'
 
 import Login from ".//Account/Login"
 import Signup from ".//Account/Signup"
-// import Camera from ".//Account/Camera"
+import Page2 from ".//Page2"
 
 
 import DonorForm from ".//Donor/DonorForm"
@@ -20,8 +20,8 @@ const MainNavigator = createStackNavigator({
     screen: Signup
   },
 
-  // Camera:{
-  //   screen:Camera },
+  Page2:{
+    screen:Page2 },
 
   Page:
     { screen: Page },

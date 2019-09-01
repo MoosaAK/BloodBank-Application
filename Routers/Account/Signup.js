@@ -95,7 +95,7 @@ export default class Signup extends React.Component {
                         <TouchableOpacity
                             style={{ marginTop: 10, marginLeft: 20 }}
                             onPress={() =>
-                                this.props.navigation.navigate('Camera')
+                                this.props.navigation.navigate('Page2')
                             }
                         >
                             <Image
