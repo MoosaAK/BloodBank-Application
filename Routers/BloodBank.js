@@ -56,8 +56,7 @@ export default class BloodBank extends React.Component {
                 </TouchableOpacity>
 
 
-
-                <View>
+                <View style={{ flexDirection: 'row' }}>
                     <TextInput
                         placeholder="Search Here..."
                         value={this.state.search}
@@ -67,12 +66,18 @@ export default class BloodBank extends React.Component {
                         style={styles.textInputStyle}
 
                     />
-                    <TouchableOpacity
-                        style={styles.button} >
-                        <Text style={styles.buttonText}>SEARCH</Text>
-
+                    <TouchableOpacity>
+                        <Text style={{ fontSize: 20, marginTop: 20, marginLeft: 10 }}>🔍</Text>
                     </TouchableOpacity>
                 </View>
+                <TouchableOpacity
+                    onPress={() =>
+                        this.props.navigation.navigate('Page')
+                    } activeOpacity={0.7} style={styles.button} >
+
+                    <Text style={styles.buttonText}>BACK TO DASHBOARD</Text>
+
+                </TouchableOpacity>
             </View>
         );
     }
@@ -90,20 +95,25 @@ const styles = StyleSheet.create({
 
     button: {
         alignItems: 'center',
-        backgroundColor: 'gray',
-        padding: 12,
-        width: 255,
+        padding: 10,
+        width: 180,
         marginTop: 12,
+        backgroundColor:'black'
     },
     textInputStyle: {
 
         height: 37,
-        width: 250,
+        width: 140,
         textAlign: 'center',
         borderWidth: 1,
         borderColor: 'black',
         borderRadius: 8,
         marginTop: 15
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 15
     },
 
 });

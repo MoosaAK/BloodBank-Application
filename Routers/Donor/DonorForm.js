@@ -30,10 +30,8 @@ export default class DonorForm extends React.Component {
                 TextInput_DonorAge: this.state.TextInput_DonorAge,
                 TextInput_DonorCity: this.state.TextInput_DonorCity,
                 PickerSelectedVal: this.state.PickerSelectedVal,
-                
-
             }).then(() => {
-                console.log('INSERTED')
+                console.log('Inserted')
             }
             ).catch((error) => {
                 console.log(error)
@@ -59,31 +57,31 @@ export default class DonorForm extends React.Component {
 
 
     }
-    ConsoleValues = () => {
-        console.log("Submit button pressed")
-        console.log(this.state.TextInput_DonorName)
-        console.log(this.state.TextInput_DonorNumber)
-        console.log(this.state.TextInput_DonorAge)
-        console.log(this.state.TextInput_DonorCity)
-        console.log(this.state.PickerSelectedVal)
-        // console.log(this.state.image);
+    // ConsoleValues = () => {
+    //     console.log("Submit button pressed")
+    //     console.log(this.state.TextInput_DonorName)
+    //     console.log(this.state.TextInput_DonorNumber)
+    //     console.log(this.state.TextInput_DonorAge)
+    //     console.log(this.state.TextInput_DonorCity)
+    //     console.log(this.state.PickerSelectedVal)
+    //     // console.log(this.state.image);
 
-    }
+    // }
 
-    Send_Data_Function = () => {
+    // Send_Data_Function = () => {
 
-        this.props.navigation.navigate('***', {
-            DonorNameOBJ: this.state.TextInput_DonorName,
-            DonorNumberOBJ: this.state.TextInput_DonorNumber,
-            DonorAgeOBJ: this.state.TextInput_DonorAge,
-            DonorCityOBJ: this.state.TextInput_DonorCity,
-            DonorBGroupOBJ: this.state.BloodGroup,
-            // image: this.state.image
+    //     this.props.navigation.navigate('***', {
+    //         DonorNameOBJ: this.state.TextInput_DonorName,
+    //         DonorNumberOBJ: this.state.TextInput_DonorNumber,
+    //         DonorAgeOBJ: this.state.TextInput_DonorAge,
+    //         DonorCityOBJ: this.state.TextInput_DonorCity,
+    //         DonorBGroupOBJ: this.state.BloodGroup,
+    //         // image: this.state.image
 
-        });
+    //     });
 
 
-    }
+    // }
     render() {
         let { image } = this.state;
 
@@ -144,12 +142,12 @@ export default class DonorForm extends React.Component {
                         underlineColorAndroid='transparent'
                     />
 
-                    <View style={{ width: 100, marginTop: 0 }}>
-                        <Text style={{ fontSize: 10 }}>Blood Group: </Text>
+                    <View style={{ width: 180, marginTop: 0 }}>
                         <Picker
                             selectedValue={this.state.PickerSelectedVal}
                             onValueChange={(itemValue, itemIndex) => this.setState({ PickerSelectedVal: itemValue })} >
 
+                            <Picker.Item label="Blood Group" value="null" />
                             <Picker.Item label="O+" value="O+" />
                             <Picker.Item label="O-" value="O-" />
                             <Picker.Item label="A+" value="A+" />
@@ -161,7 +159,7 @@ export default class DonorForm extends React.Component {
 
                         </Picker>
 
-                        <TouchableOpacity onPress={this.getSelectedPickerValue}></TouchableOpacity>
+                        <TouchableOpacity onPress={this.getSelectedPickerValue} style={{ textAlign: 'center', alignItems: 'center', alignContent: 'center' }}></TouchableOpacity>
                     </View>
 
 
@@ -232,7 +230,7 @@ export default class DonorForm extends React.Component {
             aspect: [4, 3],
         });
 
-        console.log(result);
+        console.log(JSON.stringify(result));
 
         if (!result.cancelled) {
             this.setState({ image: result.uri });
@@ -322,7 +320,7 @@ const styles = StyleSheet.create({
 //         grouptoBeFiltered: '',
 //       };
 //     }
-  
+
 //     // async componentDidMount() {
 //     //     await Font.loadAsync({
 //     //       'Roboto': require('native-base/Fonts/Roboto.ttf'),
@@ -331,12 +329,12 @@ const styles = StyleSheet.create({
 //     //     })
 //     //     this.setState({ loading: false })
 //     //   }
-    
+
 
 //     componentDidMount() {
 //       this.timer = setInterval(() => this.getDonor(), 1000);
 //     }
-  
+
 //     async getDonor() {
 //       return fetch(`https://blood-donors-db.firebaseio.com/donors.json`)
 //         .then((response) => response.json())
@@ -349,8 +347,8 @@ const styles = StyleSheet.create({
 //           console.error(error);
 //         });
 //     }
-  
-  
+
+
 //     addDonor = (name, mobile, group) => {
 //       if (this.state.name != null && this.state.mobile != null && this.state.group != null) {
 //         fetch('https://blood-donors-db.firebaseio.com/donors.json', {
@@ -388,7 +386,7 @@ const styles = StyleSheet.create({
 //                 { cancelable: false }
 //               )
 //             }
-  
+
 //           })
 //           .done();
 //       }
@@ -402,33 +400,33 @@ const styles = StyleSheet.create({
 //           { cancelable: false }
 //         )
 //       }
-  
+
 //     }
-  
+
 //     onValueChange(value) {
 //       this.setState({
 //         group: value
 //       });
 //     }
-  
-  
+
+
 //     _toggleDonorPost() {
 //       this.setState({
 //         isSubmited: false
 //       })
 //     }
-  
-  
+
+
 //     render() {
 //       return (
 //         <Container>
-  
+
 //           <Header androidStatusBarColor="#af1313" style={{ backgroundColor: '#d11919' }}>
 //             <Body style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
 //               <Title>BLOOD DONORS</Title>
 //             </Body>
 //           </Header>
-  
+
 //           <Content style={{ marginLeft: 10, marginRight: 10 }}>
 //             <View style={{ backgroundColor: "#f2eded", marginTop: 10 }}>
 //               {this.state.isSubmited
@@ -438,24 +436,24 @@ const styles = StyleSheet.create({
 //                 </TouchableOpacity>
 //                 :
 //                 <View style={{ paddingLeft: 20, paddingRight: 20, paddingBottom: 40 }}>
-  
+
 //                   <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
 //                     <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#e89494', }}>DONATE YOUR BLOOD</Text>
 //                   </View>
-  
+
 //                   <Item rounded style={{ marginBottom: 20, marginTop: 20 }}>
 //                     <Input placeholder="Name"
 //                       onChangeText={input => this.setState({ name: input })}
 //                     />
 //                   </Item>
-  
+
 //                   <Item rounded style={{ marginBottom: 20, marginTop: 20 }}>
 //                     <Input placeholder="Mobile"
 //                       onChangeText={input => this.setState({ mobile: input })}
 //                       keyboardType={"phone-pad"}
 //                     />
 //                   </Item>
-  
+
 //                   <View style={styles.picker}>
 //                     <Picker
 //                       selectedValue={(this.state.group && this.state.pickerValue) || 'a'}
@@ -471,14 +469,14 @@ const styles = StyleSheet.create({
 //                       <Picker.Item label="O-" value="O-" />
 //                     </Picker>
 //                   </View>
-  
+
 //                   <Button block light onPress={() => this.addDonor(this.state.name, this.state.mobile, this.state.group)} style={{ marginLeft: 30, marginRight: 30 }}>
 //                     <Text>Add</Text>
 //                   </Button>
 //                 </View>
 //               }
 //             </View>
-  
+
 //             <View>
 //               <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 20, marginBottom: 10 }}>
 //                 <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#e89494', }}>DONORS</Text>
@@ -498,7 +496,7 @@ const styles = StyleSheet.create({
 //                   <Picker.Item label="O-" value="O-" />
 //                 </Picker>
 //               </View>
-  
+
 //             </View>
 //             {this.state.grouptoBeFiltered == null
 //               ?
