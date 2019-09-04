@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 10084,
+  "packagerPid": 13304,
   "expoServerNgrokUrl": "https://ea-thf.anonymous.routers.exp.direct",
   "packagerNgrokUrl": "https://packager.ea-thf.anonymous.routers.exp.direct",
-  "ngrokPid": 8132,
+  "ngrokPid": 2072,
   "webpackServerPort": 19006
 }

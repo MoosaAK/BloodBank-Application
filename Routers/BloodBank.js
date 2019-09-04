@@ -44,7 +44,7 @@ export default class BloodBank extends React.Component {
     //         const textData = text.toUpperCase();
     //         return itemData.indexOf(textData) > -1;
     //     });
-
+    
     render() {
         return (
             <View style={styles.container}>
