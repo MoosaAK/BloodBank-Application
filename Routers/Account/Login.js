@@ -62,8 +62,6 @@ export default class Login extends React.Component {
             // onChangeText={data => this.setState({ TextInput_Name: data })}
             style={styles.textInputStyle}
             autoCapitalize="none"
-            placeholderTextColor='black'
-            placeholder='Example: jhon@email.com'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
             underlineColorAndroid='transparent'
@@ -71,8 +69,6 @@ export default class Login extends React.Component {
           <Text style={{ marginTop: 5 }}>PASSWORD: </Text>
           <TextInput
             secureTextEntry
-            placeholderTextColor='black'
-            placeholder='******'
             autoCapitalize="none"
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
