@@ -62,6 +62,8 @@ export default class Login extends React.Component {
             // onChangeText={data => this.setState({ TextInput_Name: data })}
             style={styles.textInputStyle}
             autoCapitalize="none"
+            placeholderTextColor='black'
+            placeholder='Example: jhon@email.com'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
             underlineColorAndroid='transparent'
@@ -69,6 +71,8 @@ export default class Login extends React.Component {
           <Text style={{ marginTop: 5 }}>PASSWORD: </Text>
           <TextInput
             secureTextEntry
+            placeholderTextColor='black'
+            placeholder='******'
             autoCapitalize="none"
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
@@ -78,27 +82,7 @@ export default class Login extends React.Component {
             underlineColorAndroid='transparent'
           />
 
-          {/* <TouchableOpacity 
-        //  onPress={() =>
-        //     this.props.navigation.navigate('Page')
-        //   } 
-        onPress={this.handleLogin}
-          activeOpacity={0.7} style={styles.button} >
-
-            <Text style={styles.buttonText}> LOGIN </Text>
-
-          </TouchableOpacity>
-
-          <TouchableOpacity 
           
-          onPress={() =>
-            this.props.navigation.navigate('Signup')
-          } 
-          activeOpacity={0.7} style={styles.button} >
-
-            <Text style={styles.buttonText}>CREATE ACCOUNT</Text>
-
-          </TouchableOpacity> */}
 
           <View flexDirection='row'>
 
